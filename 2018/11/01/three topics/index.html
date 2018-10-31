@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <title>Hexo</title>
+  <meta name="description" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="MobileOptimized" content="320" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic|Open+Sans:700,400" />
+
+  <meta name="generator" content="Hexo">
+
+  
+  
+  
+
+  
+</head>
+
+
+<body class="post-template">
+
+  <header class="site-head"  style="background-image: url(//blog.ghost.org/content/images/2013/Nov/cover.png)" >
+    <div class="vertical">
+        <div class="site-head-content inner">
+             <a class="blog-logo" href="/"><img src="//blog.ghost.org/content/images/2013/Nov/bloglogo_1-1.png" alt="Blog Logo"/></a> 
+            <h1 class="blog-title">Hexo</h1>
+            <h2 class="blog-description"></h2>
+        </div>
+    </div>
+</header>
+  
+
+<main class="content" role="main">
+  <article class="post">
+    <span class="post-meta">
+      <time datetime="2018-10-31T16:22:19.031Z" itemprop="datePublished">
+          2018-11-01
+      </time>
+    
+</span>
+    <h1 class="post-title"></h1>
+    <section class="post-content">
+      <p><font size="36pt">度娘Super Fast</font><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;首页包大小gzip后只有11.1k左右。耗时也就是500多毫秒<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;首页是没有js和css外链的，不然会再发起多次请求。其他的首屏所需要的js与css，全部在上线前，编译时，编译内联至HTML中<br>1.缓存（cookie，服务端传读local还是读写local）<br>2.外链合并<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;每个文件以自己文件内容生成的版本号为戳，标识自己的唯一性。每次服务端返回页面时，会把当前在服务器上的所有静态文件版本号，返给前端<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;前端首屏加载完成后，会用这些版本号与local中进行一一对比，发现不一致的js/css，会一起发送一个合并请求。这样可以保证每个文件的缓存与版本迭代。同时，也避免了过多的外链。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;模板和数据，也会被缓存至localstorage中<br>3.使用iconfont<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;很多业务是不需要多彩色图的，这些icon就可以使用iconfont。<br>4.卡片的异步加载与缓存<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们首屏也就需要2张卡片，也将卡片内容(html/css/js)存储到了local中。异步拉取卡片的时候，如果卡片内容没有变。服务端就不要返回了。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;不在首屏的就要异步化！：触发时才会进行加载，采用按需加载。<br>5.少量静态文件的域名<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们的logo与iconfont均是放在m.baidu.com域下的，这样节省了DNS的解析<br>6.极小的图片base64化（对于小于1k的图片）<br><br><br></p>
+<p><font size="36pt">度PC到移动，渲染:</font><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;浏览器就按照了980宽的方式，渲染出来页面图像。苹果再把这张图像，缩放一下，缩为屏幕大小。在手机上观察<strong>**的电脑版<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>图像是基于像素点的描述，放大后，之前图像的一个像素，被放大为多个像素。自然是会失真的<strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>可以更改的布局宽度：浏览器的渲染依据，layout viewport<strong>（ 屏幕有多宽，浏览器就照着多宽去去渲染）<br>1.iphone3   iphone4 屏幕不变，像素密度变大 然后骗浏览器，为的是让布局不变，也就是让图片大小不变，然后iphone4里的图片大小和3里的一样，但是那张图片里的像素翻倍了
+</strong>逻辑分辨率就是我们照着多宽去写代码<strong>
+</strong>物理分辨率就是屏幕上像素点的密集程度**<br>2.到了iphone6,屏幕变大了，然后就上调了逻辑分辨率（375/320），就是放大了页面和图片，然后物理分辨率（750/640）也上去了，但貌似清晰度没有变吧<br>3.iPhone6 plus扩大清晰度，屏幕大小还是和6一样，然后屏幕上的像素点又多了，也就是物理分辨率上去了，图片更加清楚了，然后为了好算什么的就用了缩放和像素什么的让物理分辨率成了逻辑分辨率的三倍，然后除以3去写代码</p>
+<p><table><br>      <tr><br>         <th>iphone3   iphone4</th><br>         <th>屏幕不变</th><br>         <th>像素变大</th><br>         <th> 然后骗浏览器，为的是让布局不变，也就是让图片大小不变，然后iphone4里的图片大小和3里的一样，但是那张图片里的像素翻倍了</th><br>      </tr><br>      <tr><br>         <th>iphone6</th><br>         <th>屏幕变大</th><br>         <th>上调了逻辑分辨率（375/320）</th><br>         <th>就是放大了页面和图片，然后物理分辨率（750/640）也上去了，但貌似清晰度没有变吧</th><br>      </tr><br>      <tr><br>         <th>iPhone6 plus</th><br>         <th>屏幕不变</th><br>         <th>物理分辨率上去了（375/320）</th><br>         <th>图片更加清楚了，然后为了好算什么的就用了缩放和像素什么的让物理分辨率成了逻辑分辨率的三倍，然后除以3去写代码</th><br>      </tr><br><br><br></table></p>
+<p><font size="36pt">iconfont:1.怎么做 2.浏览器的兼容性</font><br><br><br></p>
+<p><font size="36pt">前端模板与渲染</font>：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.页面级渲染：前端与后端的交互，浏览器端发出URL，后端返回一张拼好了的HTML串。（html中可能会混有一些php(或者php中混有一些html)。在服务端将数据与模板进行拼装，生成要返回浏览器端的html串。)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.异步的请求与新增模板：1）把数据拿到前端拼装成页面–貌似有模板、不变的+有更新的 2）在后端拼装直接把渲染生成的HTML传给前端，前端直接用<br>未完待续hiahia</p>
+
+    </section>
+    <footer class="post-footer">
+      <section class="author">
+    <h4>John Doe</h4>
+    <p>A designer, developer and entrepreneur. Spends his time travelling the world with a bag of kites. Likes journalism and publishing platforms.</p>
+</section>
+      <section class="share">
+    <h4>Share this post</h4>
+    <a class="icon-twitter" href="http://twitter.com/share?url=http://yoursite.com/2018/11/01/three topics/"
+       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <span class="hidden">Twitter</span>
+    </a>
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/11/01/three topics/"
+       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+        <span class="hidden">Facebook</span>
+    </a>
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://yoursite.com/2018/11/01/three topics/"
+       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+        <span class="hidden">Google+</span>
+    </a>
+</section>
+    </footer>
+  </article>
+  <nav class="pagination" role="pagination">
+    
+    <span class="page-number">•</span>
+    
+    <a class="older-posts" href="/2018/10/27/URL/">
+         →
+    </a>
+    
+</nav>
+  <div id="comment" class="comments-area">
+    <h1 class="title"><a href="#disqus_comments" name="disqus_comments">Comments</a></h1>
+
+    
+</div>
+</main>
+
+
+  
+<footer class="site-footer">
+  
+  <div class="inner">
+     <section class="copyright">All content copyright <a href="/">Hexo</a> &copy; 2014 &bull; All rights reserved.</section>
+     <section class="poweredby">Proudly published with <a class="icon-ghost" href="http://zespia.tw/hexo/">Hexo</a></section>
+  </div>
+</footer>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+<script type="text/javascript" src="/js/index.js"></script>
+
+
+
+
+
+
+</body>
+</html>
