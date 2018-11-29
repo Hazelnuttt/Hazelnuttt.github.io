@@ -1,232 +1,1504 @@
 <!DOCTYPE html>
-<html>
 
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
 <head>
-  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.5.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.5.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.5.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.5.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.5.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.5.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="default">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
   <title>Hexo</title>
-  <meta name="description" content="" />
-  <meta name="HandheldFriendly" content="True" />
-  <meta name="MobileOptimized" content="320" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <link rel="stylesheet" type="text/css" href="/css/screen.css" />
-  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic|Open+Sans:700,400" />
-
-  <meta name="generator" content="Hexo">
-
-  
-  
   
 
-  
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
 </head>
 
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
 
-<body class="home-template">
+  
+  
+    
+  
 
-  <header class="site-head"  style="background-image: url(//blog.ghost.org/content/images/2013/Nov/cover.png)" >
-    <div class="vertical">
-        <div class="site-head-content inner">
-             <a class="blog-logo" href="/"><img src="//blog.ghost.org/content/images/2013/Nov/bloglogo_1-1.png" alt="Blog Logo"/></a> 
-            <h1 class="blog-title">Hexo</h1>
-            <h2 class="blog-description"></h2>
-        </div>
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
     </div>
-</header>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
   
-<main class="content" role="main">
-  
-  <article class="post">
-    <header class="post-header">
-      <span class="post-meta">
-      <time datetime="2018-11-28T16:00:00.000Z" itemprop="datePublished">
-          2018-11-29
-      </time>
-    
-    
-    | 
-    <a href='/tags/最近听的歌/'>最近听的歌</a>,
-    
-    <a href='/tags/Epic-music/'>Epic music</a>,
-    
-    <a href='/tags/纯音乐/'>纯音乐</a>,
-    
-    <a href='/tags/电音/'>电音</a>,
-    
-    <a href='/tags/rap/'>rap</a>
-    
-    
-</span>
-      <h2 class="post-title"><a href="/2018/11/29/comrade wang/">comarade wang</a></h2>
-    </header>
-    <section class="post-excerpt">
-      <p>
-      
-        小王同志喜欢的音乐
-一、最近听的歌
-1、TV In Black And White2、God Damnit3、Spring Day4、Waste it on me5、Youngblood6、Radioactive7、Mama Said8、Bulletproof9、Miracle10、遇见相似的灵魂11、茶底世界12、孤独不苦13、不为谁而作的歌14、打回原形15、裙下之臣16、让我留在你身边17、水星记
-二、Epic music
-三、纯
-      
-      </p>
-      
-      <p>
-          <a href="/2018/11/29/comrade wang/" class="excerpt-link">Read More...</a>
-      </p>
-      
-    </section>
-  </article>
-  
-  <article class="post">
-    <header class="post-header">
-      <span class="post-meta">
-      <time datetime="2018-10-31T16:22:19.031Z" itemprop="datePublished">
-          2018-11-01
-      </time>
-    
-</span>
-      <h2 class="post-title"><a href="/2018/11/01/three-topics/"></a></h2>
-    </header>
-    <section class="post-excerpt">
-      <p>
-      
-        度娘Super Fast&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;首页包大小gzip后只有11.1k左右。耗时也就是500多毫秒&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;首页是没有js和css外链的，不然会再发起多次请求。其他的首屏所需要的js与css，全部在上线前，编译时，编译内联至HTML中
-1.缓存（cookie，服务端传读
-      
-      </p>
-      
-      <p>
-          <a href="/2018/11/01/three-topics/" class="excerpt-link">Read More...</a>
-      </p>
-      
-    </section>
-  </article>
-  
-  <article class="post">
-    <header class="post-header">
-      <span class="post-meta">
-      <time datetime="2018-10-27T14:20:38.872Z" itemprop="datePublished">
-          2018-10-27
-      </time>
-    
-</span>
-      <h2 class="post-title"><a href="/2018/10/27/URL/"></a></h2>
-    </header>
-    <section class="post-excerpt">
-      <p>
-      
-        URL(Uniform Resource Location):&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;统一资源定位器 网页地址的意思&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;每个网页都有只属于自己发URL地址（我们俗称网址）具有全球唯一性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs
-      
-      </p>
-      
-      <p>
-          <a href="/2018/10/27/URL/" class="excerpt-link">Read More...</a>
-      </p>
-      
-    </section>
-  </article>
-  
-  <article class="post">
-    <header class="post-header">
-      <span class="post-meta">
-      <time datetime="2018-10-27T06:44:53.000Z" itemprop="datePublished">
-          2018-10-27
-      </time>
-    
-</span>
-      <h2 class="post-title"><a href="/2018/10/27/asset-an-image/">asset an image</a></h2>
-    </header>
-    <section class="post-excerpt">
-      <p>
+    <ul id="menu" class="menu">
       
         
+        
+        
+          
+          <li class="menu-item menu-item-home menu-item-active">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+
+  </li>
 
       
-      </p>
       
-      <p>
-          <a href="/2018/10/27/asset-an-image/" class="excerpt-link">Read More...</a>
-      </p>
-      
-    </section>
-  </article>
+    </ul>
   
-  <article class="post">
-    <header class="post-header">
-      <span class="post-meta">
-      <time datetime="2018-10-26T23:59:53.139Z" itemprop="datePublished">
-          2018-10-27
-      </time>
+
+  
     
-</span>
-      <h2 class="post-title"><a href="/2018/10/27/git/"></a></h2>
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
     </header>
-    <section class="post-excerpt">
-      <p>
-      
-        WORKFLOWWorking Directory&nbsp;&nbsp;&nbsp;&nbsp;Stage&nbsp;&nbsp;&nbsp;&nbsp;Master1.git add file2.git commit -m “    “3.git reset HEAD^（版本区）4.gut checkout – flie（丢弃工作区的修改/其实是用版本库里的版本替换工作区的版本）5.rm（工作区）6.git rm （版本区）7.gi
-      
-      </p>
-      
-      <p>
-          <a href="/2018/10/27/git/" class="excerpt-link">Read More...</a>
-      </p>
-      
-    </section>
-  </article>
-  
-  <article class="post">
-    <header class="post-header">
-      <span class="post-meta">
-      <time datetime="2018-10-17T08:46:19.248Z" itemprop="datePublished">
-          2018-10-17
-      </time>
+
     
-</span>
-      <h2 class="post-title"><a href="/2018/10/17/hello-world/">Hello World</a></h2>
-    </header>
-    <section class="post-excerpt">
-      <p>
-      
-        Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new p
-      
-      </p>
-      
-      <p>
-          <a href="/2018/10/17/hello-world/" class="excerpt-link">Read More...</a>
-      </p>
-      
-    </section>
-  </article>
-  
-  <nav class="pagination" role="pagination">
-    
-    <span class="page-number">Page 1 of 1</span>
-    
-  </nav>
-</main>
 
 
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
   
-<footer class="site-footer">
+
   
-  <div class="inner">
-     <section class="copyright">All content copyright <a href="/">Hexo</a> &copy; 2014 &bull; All rights reserved.</section>
-     <section class="poweredby">Proudly published with <a class="icon-ghost" href="http://zespia.tw/hexo/">Hexo</a></section>
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/29/comrade wang/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/11/29/comrade wang/" class="post-title-link" itemprop="http://yoursite.com/index.html">comarade wang</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-11-29 00:00:00 / Modified: 17:09:22" itemprop="dateCreated datePublished" datetime="2018-11-29T00:00:00+08:00">2018-11-29</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/关于小王同志/" itemprop="url" rel="index"><span itemprop="name">关于小王同志</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>小王同志喜欢的音乐</p>
+<p>一、最近听的歌</p>
+<p>1、TV In Black And White<br>2、God Damnit<br>3、Spring Day<br>4、Waste it on me<br>5、Youngblood<br>6、Radioactive<br>7、Mama Said<br>8、Bulletproof<br>9、Miracle<br>10、遇见相似的灵魂<br>11、茶底世界<br>12、孤独不苦<br>13、不为谁而作的歌<br>14、打回原形<br>15、裙下之臣<br>16、让我留在你身边<br>17、水星记</p>
+<p>二、Epic music</p>
+<p>三、纯音乐</p>
+<p>四、电音</p>
+<p>五、rap</p>
+<p><img src="/asset-an-image/IMG_0298.JPG" alt="show up please"></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
   </div>
-</footer>
-
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-<script type="text/javascript" src="/js/jquery.fitvids.js"></script>
-<script type="text/javascript" src="/js/index.js"></script>
+  
+  
+  
+  </article>
 
 
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/01/three-topics/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/11/01/three-topics/" class="post-title-link" itemprop="http://yoursite.com/index.html">Untitled</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-11-01 00:22:19 / Modified: 09:08:36" itemprop="dateCreated datePublished" datetime="2018-11-01T00:22:19+08:00">2018-11-01</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><font size="36pt">度娘Super Fast</font><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;首页包大小gzip后只有11.1k左右。耗时也就是500多毫秒<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;首页是没有js和css外链的，不然会再发起多次请求。其他的首屏所需要的js与css，全部在上线前，编译时，编译内联至HTML中</p>
+<p><font color="blue">1.缓存</font>（cookie，服务端传读local还是读写local）</p>
+<p><font color="blue">2.外链合并</font><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;每个文件以自己文件内容生成的版本号为戳，标识自己的唯一性。每次服务端返回页面时，会把当前在服务器上的所有静态文件版本号，返给前端<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;前端首屏加载完成后，会用这些版本号与local中进行一一对比，发现不一致的js/css，会一起发送一个合并请求。这样可以保证每个文件的缓存与版本迭代。同时，也避免了过多的外链。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;模板和数据，也会被缓存至localstorage中</p>
+<p><font color="blue">3.使用iconfont</font><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;很多业务是不需要多彩色图的，这些icon就可以使用iconfont。</p>
+<p><font color="blue">4.卡片的异步加载与缓存</font><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们首屏也就需要2张卡片，也将卡片内容(html/css/js)存储到了local中。异步拉取卡片的时候，如果卡片内容没有变。服务端就不要返回了。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;不在首屏的就要异步化！：触发时才会进行加载，采用按需加载。</p>
+<p><font color="blue">5.少量静态文件的域名</font><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们的logo与iconfont均是放在m.baidu.com域下的，这样节省了DNS的解析</p>
+<p><font color="blue">6.极小的图片base64化（对于小于1k的图片）</font><br><br><br></p>
+<p><font size="36pt">PC到移动，渲染:</font><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;浏览器就按照了980宽的方式，渲染出来页面图像。苹果再把这张图像，缩放一下，缩为屏幕大小。在手机上观察<em>**</em>的电脑版<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;图像是基于像素点的描述，放大后，之前图像的一个像素，被放大为多个像素。自然是会失真的<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;可以更改的布局宽度：浏览器的渲染依据，layout viewport（ 屏幕有多宽，浏览器就照着多宽去去渲染）</p>
+<p><font color="green"><strong>逻辑分辨率：就是照着宽度去写代码</strong></font></p>
+<p><font color="green"><strong>物理分辨率：单位屏幕上的像素点变多了，貌似就更清晰了</strong></font><br>1.iphone3   iphone4 屏幕不变，像素密度变大 然后骗浏览器，为的是让布局不变，也就是让图片大小不变，然后iphone4里的图片大小和3里的一样，但是那张图片里的像素翻倍了<br>2.到了iphone6,屏幕变大了，然后就上调了逻辑分辨率（375/320），就是放大了页面和图片，然后物理分辨率（750/640）也上去了，但貌似清晰度没有变吧<br>3.iPhone6 plus扩大清晰度，屏幕大小还是和6一样，然后屏幕上的像素点又多了，也就是物理分辨率上去了，图片更加清楚了，然后为了好算什么的就用了缩放和像素什么的让物理分辨率成了逻辑分辨率的三倍，然后除以3去写代码</p>
+<p><table><br>      <tr><br>         <th>iphone3   iphone4</th><br>         <th>屏幕不变</th><br>         <th>像素变大</th><br>         <th> 然后骗浏览器，为的是让布局不变，也就是让图片大小不变，然后iphone4里的图片大小和3里的一样，但是那张图片里的像素翻倍了</th><br>      </tr><br>      <tr><br>         <th>iphone6</th><br>         <th>屏幕变大</th><br>         <th>上调了逻辑分辨率（375/320），然后物理分辨率（750/640）也上去了</th><br>         <th>就是放大了页面和图片，但貌似清晰度没有变吧</th><br>      </tr><br>      <tr><br>         <th>iPhone6 plus</th><br>         <th>屏幕不变</th><br>         <th>物理分辨率上去了</th><br>         <th>图片更加清楚了，然后为了好算什么的就用了缩放和像素什么的让物理分辨率成了逻辑分辨率的三倍，然后除以3去写代码</th><br>      </tr><br></table><br><br><br></p>
+<p><font size="36pt">iconfont:1.怎么做 2.浏览器的兼容性</font><br><br><br></p>
+<p><font size="36pt">前端模板与渲染</font>：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.页面级渲染：前端与后端的交互，浏览器端发出URL，后端返回一张拼好了的HTML串。（html中可能会混有一些php(或者php中混有一些html)。在服务端将数据与模板进行拼装，生成要返回浏览器端的html串。)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.异步的请求与新增模板：1）把数据拿到前端拼装成页面–貌似有模板、不变的+有更新的 2）在后端拼装直接把渲染生成的HTML传给前端，前端直接用<br><img src="/asset-an-image/IMG_0070.JPG" alt="show up please"><br>未完待续hiahia<br>笔记来源：<a href="https://segmentfault.com/a/1190000005882953" target="_blank" rel="noopener">https://segmentfault.com/a/1190000005882953</a><br>欢迎吐槽、批评<br><a href="mailto:1282308134@qq.com? subject=tips &body=吐槽批评快来吧" target="_blank" rel="noopener">吐槽批评快来吧</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/27/URL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/10/27/URL/" class="post-title-link" itemprop="http://yoursite.com/index.html">Untitled</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-10-27 22:20:38" itemprop="dateCreated datePublished" datetime="2018-10-27T22:20:38+08:00">2018-10-27</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-11-23 23:49:34" itemprop="dateModified" datetime="2018-11-23T23:49:34+08:00">2018-11-23</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <font color="blue">URL(Uniform Resource Location)</font>:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;统一资源定位器 网页地址的意思<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;每个网页都有只属于自己发URL地址（我们俗称网址）具有全球唯一性<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;上网浏览网页，在鼠标点击之间连接到不同的URL的这个过程都显示在电脑的浏览器的地址栏里。<br><font color="blue">CDN（Content Delivery Network)</font>:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;内容分发网络 依靠部署在各地的边缘服务器，通过中心平台的负载均衡，内容分发调度，使用户就近获取所需内容，降低网络拥塞，提高用户访问响应速度和命中度。<br><font color="blue">代理、网关</font>：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;对URL从一个浏览器到外部服务器和返回结果，传递一个请求的系统。<br><font color="blue">应用服务器</font>：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;通过各种协议把商业逻辑到客户端的程序<br>对<font color="blue">TCP/UDP</font>：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;传输层协议 请求<br><font color="blue">TLS</font>:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;安全传输层协议<br><font color="blue">LVS（Linux 虚拟服务器）</font>给后端ECS集群<br>对<font color="blue">HTTP</font>:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;超文本传输协议<br>给Tengine集群 再给后端ECS集群<br><font color="blue">DNS</font>：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;指保存有该网络中所有主机的域名和对应IP地址，并具有将域名转换为IP地址功能的服务器。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;整个系统架构分为流量层、应用层、数据层，利用 DNS 技术实现 GSLB（Global Server Load Balance，全局负载均衡），实现用户就近访问。<br><font color="blue">ISP</font>（Internet Service Provider，互联网服务提供商):<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本地 DNS 地址<br><font color="blue">DHCP</font>（Dynamic Host Configuration Protocol):<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;动态主机配置协议<br><br><br><br><font size="“36pt”" color="blue">HTTP请求</font>：<br>在上一步我们通过 DNS 解析拿到服务器 IP 地址后，浏览器再通过系统调用 Socket 接口与服务器 443 端口进行通信，整个过程可以分解为<font color="green"><strong>建立连接、发送 HTTP 请求、返回 HTTP 响应、维持连接、释放连接</strong></font>五个部分<br><font color="blue">socket</font>：网络上的两个程序通过一个双向的通信连接实现数据的交换，这个连接的一端称为一个socket。建立网络通信连接至少要一对端口号。<br><font size="“36pt”" color="blue">浏览器解析过程</font>：<br>现代浏览器是一个及其庞大的大型软件，在某种程度上甚至不亚于一个操作系统，它由多媒体支持、图形显示、GPU 渲染、进程管理、内存管理、沙箱机制、存储系统、网络管理等大大小小数百个组件组成.<br><br>一个 Browser 进程<br>多个 Renderer 进程<br>一个 GPU 进程<br>多个 NPAPI Render 进程<br>多个 Pepper Plugin 进程<br>而每个进程包括若干个线程：<br>一个主线程<br>在<font color="green"> Browser 进程中：渲染更新界面</font><br>在<font color="green">Renderer 进程中：使用持有的内核 Blink 实例解析渲染更新界面</font><br>一个 IO 线程<br>在 Browser 进程中：处理 IPC 通信和网络请求<br>在 Renderer 进程中：处理与 Browser 进程之间的 IPC 通信<br>一组专用线程<br>一个通用线程池<br><br><br><br><font size="“36pt”" color="blue">主流程</font>：<br>页面的解析工作是在 Renderer 进程中进行的，Renderer 进程通过在主线程中持有的 Blink 实例边接收边解析 HTML 内容。<br><font size="“36pt”" color="blue">渲染流程</font>：<br>DOM 树、RenderObject 树（也叫 Render 树）、 RenderLayer 树，1.同一个坐标系（比如 canvas、absolute）时 ，合并（由CPU）RenderLayer，   GraphicsLayer 树 2.当 RenderLayer 满足合成层条件（比如 transform，熟知的硬件加速）时，会有自己的 GraphicsLayer。每个 GraphicsLayer 都有一个 GraphicsContext 对象，负责将层绘制成位图作为纹理上传给 GPU，由 GPU 负责合成多个纹理，最终显示在屏幕上。<br><font size="“26pt”">笔记来源</font>：<a href="https://zhuanlan.zhihu.com/p/43369093" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/43369093</a><br>和<font size="“26pt”">百度百科</font>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/27/asset-an-image/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/10/27/asset-an-image/" class="post-title-link" itemprop="http://yoursite.com/index.html">asset an image</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-10-27 14:44:53" itemprop="dateCreated datePublished" datetime="2018-10-27T14:44:53+08:00">2018-10-27</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-10-28 13:57:54" itemprop="dateModified" datetime="2018-10-28T13:57:54+08:00">2018-10-28</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="/asset-an-image/IMG_0229.JPG" alt="show up please"></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/27/git/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/10/27/git/" class="post-title-link" itemprop="http://yoursite.com/index.html">Untitled</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-10-27 07:59:53" itemprop="dateCreated datePublished" datetime="2018-10-27T07:59:53+08:00">2018-10-27</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-11-20 16:40:22" itemprop="dateModified" datetime="2018-11-20T16:40:22+08:00">2018-11-20</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <font size="36pt">WORKFLOW</font><br><font size="“22pt”" color="blue">Working Directory&nbsp;&nbsp;&nbsp;&nbsp;Stage&nbsp;&nbsp;&nbsp;&nbsp;Master</font><br><font size="“14pt”">1.git add file<br>2.git commit -m “    “<br>3.git reset HEAD^（版本区）<br>4.gut checkout – flie（丢弃工作区的修改/其实是用版本库里的版本替换工作区的版本）<br>5.rm（工作区）<br>6.git rm （版本区）<br>7.git diff HEAD （工作区、版本区 比较）<br>8.git log<br>9.git reflog<br>10.git status</font><br><font size="“22pt”" color="blue">master&nbsp;&nbsp;&nbsp;&nbsp;branch</font><br><font size="“14pt”">1.git checkout -b dev（创建切换）/git branch dev（创建）<br>2.git branch（查看）<br>3.git checkout master/git checkout dev（切换）<br>4.git merge dev（合并）<br>5.git branch -d dev（删除）</font><br><font size="“22pt”" color="blue">local&nbsp;&nbsp;&nbsp;&nbsp;remote</font><br><font size="“14pt”">1.git remote add origin ___<br>2.git push -u origin master/git push origin master<br>3.git remote remove origin<br>4.删掉的文件同步到github<br>git add -A<br>它能stages所有文件，而之前用的<br>git add .<br>只能stages新文件和被修改文件，没有被删除文件</font><br><font size="“22pt”" color="blue">RemoteA&nbsp;&nbsp;&nbsp;&nbsp;RemoteB</font><br><font size="“14pt”">1.fork<br>2.PR</font><br><font size="“22pt”" color="blue">调解冲突</font><br><font size="“14pt”">1)<br>deva 先merge master<br>devb 后×<br>step1 手动改 step2 add commit<br>2)<br>deva 先merge master1 先push Remote<br>devb 后merge master2 后push×<br>step1 B pull Remote step2 push</font>
+
+<p>多人协作<br>你从远程仓库克隆时，Git自动把本地的master和远程的master分支对应<br>查看远程仓库的信息<br>git remote/git remote -v（显示抓取（fetch）和推送(push)的地址）<br>git push origin master<br>git push origin dev<br>小伙伴在另一台电脑克隆（他把钥匙添加到github了，就有权限push了）<br>他只看得到你的项目的master分支，他要在dev分支上开发 git checkout -b dev<br>git add env.txt<br>git commit -m “add env”<br>git push origin dev<br>冲突：没有指定本地dev分支与远程origin/dev分支的链接<br>git branch –set-upstream-to=origin/dev dev<br>git pull<br>手动改了以后，git commit，git push origin dev</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/17/hello-world/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/10/17/hello-world/" class="post-title-link" itemprop="http://yoursite.com/index.html">Hello World</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-10-17 16:46:19" itemprop="dateCreated datePublished" datetime="2018-10-17T16:46:19+08:00">2018-10-17</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+
+
+          </div>
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.7.1</div>
 
 
 
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v6.5.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.5.0"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 </body>
 </html>
