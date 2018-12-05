@@ -108,18 +108,18 @@
 
 
 
-  <meta name="description" content="我用到的5个基本的task、watch、src、dest、run 插件gulpgulp-minifycssgulp-uglifygulp-renamegulp-imagemin(本来还有一个cache，所说可以只压缩新的，但貌似是要缓存的所以我就没用)gulp-concatgulp-notifygulp-htmlmingulp-livereload(和reload有点混，reload在同步更新里用">
+  <meta name="description" content="前端开发除了HTML+CSS+Javascript,需要提高效率，减少重复工作自动化工具 我用到的5个基本的task、watch、src、dest、run 插件gulpgulp-minifycssgulp-uglifygulp-renamegulp-imagemin(本来还有一个cache，所说可以只压缩新的，但貌似是要缓存的所以我就没用)gulp-concatgulp-notifygulp-ht">
 <meta name="keywords" content="gulp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="gulp learning">
 <meta property="og:url" content="http://yoursite.com/2018/12/01/gulp/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="我用到的5个基本的task、watch、src、dest、run 插件gulpgulp-minifycssgulp-uglifygulp-renamegulp-imagemin(本来还有一个cache，所说可以只压缩新的，但貌似是要缓存的所以我就没用)gulp-concatgulp-notifygulp-htmlmingulp-livereload(和reload有点混，reload在同步更新里用">
+<meta property="og:description" content="前端开发除了HTML+CSS+Javascript,需要提高效率，减少重复工作自动化工具 我用到的5个基本的task、watch、src、dest、run 插件gulpgulp-minifycssgulp-uglifygulp-renamegulp-imagemin(本来还有一个cache，所说可以只压缩新的，但貌似是要缓存的所以我就没用)gulp-concatgulp-notifygulp-ht">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-12-04T16:48:45.238Z">
+<meta property="og:updated_time" content="2018-12-05T08:32:06.223Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="gulp learning">
-<meta name="twitter:description" content="我用到的5个基本的task、watch、src、dest、run 插件gulpgulp-minifycssgulp-uglifygulp-renamegulp-imagemin(本来还有一个cache，所说可以只压缩新的，但貌似是要缓存的所以我就没用)gulp-concatgulp-notifygulp-htmlmingulp-livereload(和reload有点混，reload在同步更新里用">
+<meta name="twitter:description" content="前端开发除了HTML+CSS+Javascript,需要提高效率，减少重复工作自动化工具 我用到的5个基本的task、watch、src、dest、run 插件gulpgulp-minifycssgulp-uglifygulp-renamegulp-imagemin(本来还有一个cache，所说可以只压缩新的，但貌似是要缓存的所以我就没用)gulp-concatgulp-notifygulp-ht">
 
 
 
@@ -394,7 +394,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Updated at: 2018-12-05 00:48:45" itemprop="dateModified" datetime="2018-12-05T00:48:45+08:00">2018-12-05</time>
+                <time title="Updated at: 2018-12-05 16:32:06" itemprop="dateModified" datetime="2018-12-05T16:32:06+08:00">2018-12-05</time>
               
             
           </span>
@@ -445,7 +445,8 @@
       
 
       
-        <h1 id="我用到的5个基本的"><a href="#我用到的5个基本的" class="headerlink" title="我用到的5个基本的"></a>我用到的5个基本的</h1><p>task、watch、src、dest、run</p>
+        <h1 id="前端开发"><a href="#前端开发" class="headerlink" title="前端开发"></a>前端开发</h1><p>除了HTML+CSS+Javascript,需要提高效率，减少重复工作<br>自动化工具</p>
+<h1 id="我用到的5个基本的"><a href="#我用到的5个基本的" class="headerlink" title="我用到的5个基本的"></a>我用到的5个基本的</h1><p>task、watch、src、dest、run</p>
 <h1 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h1><p>gulp<br>gulp-minifycss<br>gulp-uglify<br>gulp-rename<br>gulp-imagemin(本来还有一个cache，所说可以只压缩新的，但貌似是要缓存的所以我就没用)<br>gulp-concat<br>gulp-notify<br>gulp-htmlmin<br>gulp-livereload(和reload有点混，reload在同步更新里用到)<br>del<br>gulp-connect(还没有成功)</p>
 <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>function(cb)<br>cb是什么东西，貌似好像是说明那件事情做好了，如果有些特定的返回值才会执行下一个任务<br>异步的callback、promise、stream 有一些凌乱，为什么task里又有var<br>connect写的貌似不对，同步不了</p>
 <h1 id="gulpfile-js"><a href="#gulpfile-js" class="headerlink" title="gulpfile.js"></a>gulpfile.js</h1><h3 id="js压缩、合并、重命名"><a href="#js压缩、合并、重命名" class="headerlink" title="js压缩、合并、重命名"></a>js压缩、合并、重命名</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Scripts</span></span><br><span class="line">gulp.task(<span class="string">'scripts'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> gulp.src(<span class="string">'./public/src/scripts/**/*.js'</span>)</span><br><span class="line">    .pipe(concat(<span class="string">'main.js'</span>))</span><br><span class="line">    .pipe(gulp.dest(<span class="string">'dist/assets/js'</span>))</span><br><span class="line">    .pipe(rename(&#123;<span class="attr">suffix</span>: <span class="string">'.min'</span>&#125;))</span><br><span class="line">    .pipe(uglify())</span><br><span class="line">    .pipe(gulp.dest(<span class="string">'dist/assets/js'</span>))</span><br><span class="line">    .pipe(notify(&#123; <span class="attr">message</span>: <span class="string">'Scripts task complete'</span> &#125;));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
@@ -677,7 +678,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#我用到的5个基本的"><span class="nav-number">1.</span> <span class="nav-text">我用到的5个基本的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#插件"><span class="nav-number">2.</span> <span class="nav-text">插件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#问题"><span class="nav-number">3.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gulpfile-js"><span class="nav-number">4.</span> <span class="nav-text">gulpfile.js</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#js压缩、合并、重命名"><span class="nav-number">4.0.1.</span> <span class="nav-text">js压缩、合并、重命名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#css压缩"><span class="nav-number">4.0.2.</span> <span class="nav-text">css压缩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片压缩"><span class="nav-number">4.0.3.</span> <span class="nav-text">图片压缩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#清理和默认任务（这里有一个异步）"><span class="nav-number">4.0.4.</span> <span class="nav-text">清理和默认任务（这里有一个异步）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#html压缩"><span class="nav-number">4.0.5.</span> <span class="nav-text">html压缩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过watch-看修改的文件-自动执行相关命令"><span class="nav-number">4.0.6.</span> <span class="nav-text">通过watch 看修改的文件 自动执行相关命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用reload-同步更新不用f5"><span class="nav-number">4.0.7.</span> <span class="nav-text">用reload 同步更新不用f5</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前端开发"><span class="nav-number">1.</span> <span class="nav-text">前端开发</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#我用到的5个基本的"><span class="nav-number">2.</span> <span class="nav-text">我用到的5个基本的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#插件"><span class="nav-number">3.</span> <span class="nav-text">插件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#问题"><span class="nav-number">4.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gulpfile-js"><span class="nav-number">5.</span> <span class="nav-text">gulpfile.js</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#js压缩、合并、重命名"><span class="nav-number">5.0.1.</span> <span class="nav-text">js压缩、合并、重命名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#css压缩"><span class="nav-number">5.0.2.</span> <span class="nav-text">css压缩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片压缩"><span class="nav-number">5.0.3.</span> <span class="nav-text">图片压缩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#清理和默认任务（这里有一个异步）"><span class="nav-number">5.0.4.</span> <span class="nav-text">清理和默认任务（这里有一个异步）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#html压缩"><span class="nav-number">5.0.5.</span> <span class="nav-text">html压缩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过watch-看修改的文件-自动执行相关命令"><span class="nav-number">5.0.6.</span> <span class="nav-text">通过watch 看修改的文件 自动执行相关命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用reload-同步更新不用f5"><span class="nav-number">5.0.7.</span> <span class="nav-text">用reload 同步更新不用f5</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
