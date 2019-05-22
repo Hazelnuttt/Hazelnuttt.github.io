@@ -1,4 +1,963 @@
-<!DOCTYPE html><html class="theme-next gemini use-motion" lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=2"><meta name="theme-color" content="#222"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet"><link href="/css/main.css?v=6.5.0" rel="stylesheet"><link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.5.0"><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.ico?v=6.5.0"><link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.ico?v=6.5.0"><link rel="mask-icon" href="/images/logo.svg?v=6.5.0" color="#222"><script id="hexo.configurations">var NexT=window.NexT||{},CONFIG={root:"/",scheme:"Gemini",version:"6.5.0",sidebar:{position:"left",display:"post",offset:12,b2t:!1,scrollpercent:!1,onmobile:!1},fancybox:!1,fastclick:!1,lazyload:!1,tabs:!0,motion:{enable:!0,async:!1,transition:{post_block:"fadeIn",post_header:"slideDownIn",post_body:"slideDownIn",coll_header:"slideLeftIn",sidebar:"slideUpIn"}},algolia:{applicationID:"",apiKey:"",indexName:"",hits:{per_page:10},labels:{input_placeholder:"Search for Posts",hits_empty:"We didn't find any results for the search: ${query}",hits_stats:"${hits} results found in ${time} ms"}}}</script><meta name="description" content="前言首先它是一个网站，不是一个网页。我仔细思考过网站这个东西，而且尽量往它身上靠，但我觉得我欠缺的东西很多很多，让我不知道怎么去实现某一些细节，一些让用户体验感很好的细节，让用户觉得这个网站不是很死的细节。我先来说一下我觉得好的网站是怎样的。 视觉 简   一个网站它是用来干嘛的，就要充分服务好这个主题，给用户提供最直接、最快的服务     动   一个网站往下翻东西的时候，你能感受到它是等你快翻"><meta name="keywords" content="website"><meta property="og:type" content="article"><meta property="og:title" content="Website"><meta property="og:url" content="http://yoursite.com/2019/02/21/website/index.html"><meta property="og:site_name" content="Hexo"><meta property="og:description" content="前言首先它是一个网站，不是一个网页。我仔细思考过网站这个东西，而且尽量往它身上靠，但我觉得我欠缺的东西很多很多，让我不知道怎么去实现某一些细节，一些让用户体验感很好的细节，让用户觉得这个网站不是很死的细节。我先来说一下我觉得好的网站是怎样的。 视觉 简   一个网站它是用来干嘛的，就要充分服务好这个主题，给用户提供最直接、最快的服务     动   一个网站往下翻东西的时候，你能感受到它是等你快翻"><meta property="og:locale" content="zh-CN"><meta property="og:updated_time" content="2019-02-21T16:45:27.474Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Website"><meta name="twitter:description" content="前言首先它是一个网站，不是一个网页。我仔细思考过网站这个东西，而且尽量往它身上靠，但我觉得我欠缺的东西很多很多，让我不知道怎么去实现某一些细节，一些让用户体验感很好的细节，让用户觉得这个网站不是很死的细节。我先来说一下我觉得好的网站是怎样的。 视觉 简   一个网站它是用来干嘛的，就要充分服务好这个主题，给用户提供最直接、最快的服务     动   一个网站往下翻东西的时候，你能感受到它是等你快翻"><link rel="canonical" href="http://yoursite.com/2019/02/21/website/"><script id="page.configurations">CONFIG.page={sidebar:""}</script><title>Website | Hexo</title><noscript><style>.sidebar-inner,.use-motion .brand,.use-motion .collection-title,.use-motion .comments,.use-motion .menu-item,.use-motion .motion-element,.use-motion .pagination,.use-motion .post-block,.use-motion .post-body,.use-motion .post-header{opacity:initial}.use-motion .logo,.use-motion .site-subtitle,.use-motion .site-title{opacity:initial;top:initial}.logo-line-after i{right:initial}</style></noscript></head><body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN"><div class="container sidebar-position-left page-post-detail"><div class="headband"></div><header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="header-inner"><div class="site-brand-wrapper"><div class="site-meta"><div class="custom-logo-site-title"><a href="/" class="brand" rel="start"><span class="logo-line-before"><i></i></span> <span class="site-title">Hexo</span> <span class="logo-line-after"><i></i></span></a></div><p class="site-subtitle">Hazelnuttt's personal blog</p></div><div class="site-nav-toggle"><button aria-label="切换导航栏"><span class="btn-bar"></span> <span class="btn-bar"></span> <span class="btn-bar"></span></button></div></div><nav class="site-nav"><ul id="menu" class="menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i><br>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i><br>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i><br>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i><br>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i><br>归档</a></li><li class="menu-item menu-item-search"><a href="javascript:;" class="popup-trigger"><i class="menu-item-icon fa fa-search fa-fw"></i><br>搜索</a></li></ul><div class="site-search"><div class="popup search-popup local-search-popup"><div class="local-search-header clearfix"><span class="search-icon"><i class="fa fa-search"></i> </span><span class="popup-btn-close"><i class="fa fa-times-circle"></i></span><div class="local-search-input-wrapper"><input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input"></div></div><div id="local-search-result"></div></div></div></nav></div></header><main id="main" class="main"><div class="main-inner"><div class="content-wrap"><div id="content" class="content"><div id="posts" class="posts-expand"><article class="post post-type-normal" itemscope itemtype="http://schema.org/Article"><div class="post-block"><link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/21/website/"><span hidden itemprop="author" itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="Hazelnuttt"><meta itemprop="description" content=""><meta itemprop="image" content="/images/aviator.jpg"></span><span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="Hexo"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">Website</h1><div class="post-meta"><span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i> </span><span class="post-meta-item-text">发表于</span> <time title="创建时间：2019-02-21 21:59:39" itemprop="dateCreated datePublished" datetime="2019-02-21T21:59:39+08:00">2019-02-21</time> <span class="post-meta-divider">|</span> <span class="post-meta-item-icon"><i class="fa fa-calendar-check-o"></i> </span><span class="post-meta-item-text">更新于</span> <time title="修改时间：2019-02-22 00:45:27" itemprop="dateModified" datetime="2019-02-22T00:45:27+08:00">2019-02-22</time> </span><span class="post-category"><span class="post-meta-divider">|</span> <span class="post-meta-item-icon"><i class="fa fa-folder-o"></i> </span><span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span></span></div></header><div class="post-body" itemprop="articleBody"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>首先它是一个网站，不是一个网页。我仔细思考过网站这个东西，而且尽量往它身上靠，但我觉得我欠缺的东西很多很多，让我不知道怎么去实现某一些细节，一些让用户体验感很好的细节，让用户觉得这个网站不是很死的细节。我先来说一下我觉得好的网站是怎样的。</p><h4 id="视觉"><a href="#视觉" class="headerlink" title="视觉"></a>视觉</h4><ul><li>简<blockquote><blockquote><blockquote><p>一个网站它是用来干嘛的，就要充分服务好这个主题，给用户提供最直接、最快的服务</p></blockquote></blockquote></blockquote></li><li>动<blockquote><blockquote><blockquote><p>一个网站往下翻东西的时候，你能感受到它是等你快翻到那里的时候跳出来的；还有就是一些很小很小，不会妨碍主题的小动画，当鼠标悬停在某个小图标上时，它会细微地动一下。（ps：我不知道第一个算不算动画）</p></blockquote></blockquote></blockquote></li><li>布局（部分）<blockquote><blockquote><blockquote><p>1、一个网站可以划分为几个部分，导航栏（顶部、侧边栏），一个小小的导航栏，别小瞧，我just can’t。比如鼠标悬停，下拉框直接下来了，下拉之后再悬停又一个大内容扩展出来。还有点击某个导航栏的选项后有一个小尖尖，我我我，，，2、看过一些商业型的页面，他们需要宣传他们新的产品，那就需要一个宣传新产品的一部分内容；产品会有不同的类，通常把这些类先集中一下，然后链接到具体产品，但是分类有会有很多种，宣传页面的形式不能雷同；又或者 有一些活动宣传。。这样内容就有很多个部分，每个部分都会是一个<strong>电脑大小</strong>的页面，你要充分掌握好这个电脑大小的内容，给用户一个不会“<strong>断</strong>“的感觉，并且内容适中</p></blockquote></blockquote></blockquote><h4 id="前后端交互"><a href="#前后端交互" class="headerlink" title="前后端交互"></a>前后端交互</h4>怎么说呢，就我吧，感觉没有后端的东西，那个网页就是死的。虽说“一个静态页面的请求+返回一个静态页面”这也算是前后端交互，但是前后端交互把，我会把它放到一个很高的水平上，网页一下子就有生命了。比如注册，（手机、email、qq、微信、短信、扫描二维码登录），这些功能让我觉得自己无从下手，因为这些功能真的能体现这个网站的生命啊！还有验证、提交信息等、、、自己很菜。还有最近我去弄了一下blog，稍微仔细地看了一下next这个主题，很厉害啊。。。人家的渲染，我差不多知道一些，模板提取啊，数据库的东西展示到页面啊，我不知道它用的什么语言，但就是HTML感觉要被后端的语言快覆盖掉了，当然css、js是不会怎么变的，但我肯定不是一个水平的。<h4 id="域名、服务器"><a href="#域名、服务器" class="headerlink" title="域名、服务器"></a>域名、服务器</h4>前面都是一个web网站的程序，再来说说一个完整的网站。首先得有个域名，域名注册这边就不详述了，给个<a href="https://www.jianshu.com/p/cea41e5c9b2a" target="_blank" rel="noopener">图文教程</a>吧。接着是服务器（ps:这边我还没有手动自己弄过），注册个服务器，把程序导入，域名到服务器因为也没弄过也不大清楚<h4 id="nodejs-搭建服务器-express框架"><a href="#nodejs-搭建服务器-express框架" class="headerlink" title="nodejs 搭建服务器 + express框架"></a>nodejs 搭建服务器 + express框架</h4>不得不说，我感觉好难啊，因为我会觉得看不懂啊，它虽然会跟你讲这一部分是干了件什么事，但是我得一句句看懂吧，教程没有做到这一点啊，让我觉得自己还是js不会写，js。js。js。唉这个寒假没有，，我要快点补了。express里我用了个ejs的模板引擎，然后就有一点MVC的影子了。不过要做到表单提交这些功能，自己还要进化啊啊！<h2 id="网页碰到的问题-解决方法"><a href="#网页碰到的问题-解决方法" class="headerlink" title="网页碰到的问题 + 解决方法"></a>网页碰到的问题 + 解决方法</h2>一个网页可以分为几个部分，几个功能<h4 id="导航栏"><a href="#导航栏" class="headerlink" title="导航栏"></a>导航栏</h4><blockquote><blockquote><blockquote><p><strong>问题</strong>：一开始学的时候，会觉得“我靠，一个导航栏，怎么有这么多class”，一开始肯定也会不清楚这些class是干什么的：其实就是bootstrap帮你写好的css（bootstrap是一个css框架）这里可以利用好IDE，ctrl+左鼠标键，查看该css<br><br><strong>解决方法</strong>：看模板，然后多看看，发现就是那几句话，然后我知道这是个导航栏固定的套路</p></blockquote></blockquote></blockquote><h4 id="页面内容"><a href="#页面内容" class="headerlink" title="页面内容"></a>页面内容</h4>前面我也说了，一个好的页面会有页面内容的划分，这怎么做到呢？笼统地说就是给一个内容下面加一个背景。<blockquote><blockquote><blockquote><p><strong>问题</strong>：再回到前面，我是不是说过这个页面的大小要差不多是你电脑大小，这样背景的高度是不是就要和你电脑高度差不多，但是你也要顾及到你的内容啊，总要把相关内容包括进来。<br><br><strong>解决方法</strong>：1.固定高度 2.内容到哪，高度到哪</p></blockquote></blockquote></blockquote><h4 id="移动端适配"><a href="#移动端适配" class="headerlink" title="移动端适配"></a>移动端适配</h4>主角肯定是bootstra的栅格系统了<blockquote><blockquote><blockquote><p><strong>问题</strong>：肯定会走过以下坑：1.内容重叠 2.内容冒出去 3.有些东西在小屏幕不好弄，也没啥用<br><br><strong>解决方法</strong>：1./2. 12个算一下，或者直接一个个试 ；第二个问题还有一点坑，就是明明只有12个以内，怎么和导航栏一起冒出去了呢？这边是因为没有仔细看文档“row”，这个row也有点坑，不过有些页面可能看不出，就是这个row有个padding，好像是不对称的，手机端会有一点点问题 3.隐藏，既然手机端用不到，那就隐藏起来</p></blockquote></blockquote></blockquote><h4 id="页面找错"><a href="#页面找错" class="headerlink" title="页面找错"></a>页面找错</h4><strong>Chrome的F12</strong>工具，移动端适配啊，找错啊，特别是在padding啊，margin啊，栅格啊什么的，很有用<h4 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h4>分为开发和建立两个阶段。开发的时候不用去压缩，需要同步更新，就是不用一直f5。建立的时候去压缩。</li></ul></div><footer class="post-footer"><div class="post-tags"><a href="/tags/website/" rel="tag"># website</a></div><div class="post-nav"><div class="post-nav-next post-nav-item"><a href="/2018/12/10/trample/" rel="next" title="System"><i class="fa fa-chevron-left"></i> System</a></div><span class="post-nav-divider"></span><div class="post-nav-prev post-nav-item"></div></div></footer></div></article></div></div></div><div class="sidebar-toggle"><div class="sidebar-toggle-line-wrap"><span class="sidebar-toggle-line sidebar-toggle-line-first"></span> <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span> <span class="sidebar-toggle-line sidebar-toggle-line-last"></span></div></div><aside id="sidebar" class="sidebar"><div class="sidebar-inner"><ul class="sidebar-nav motion-element"><li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">文章目录</li><li class="sidebar-nav-overview" data-target="site-overview-wrap">站点概览</li></ul><section class="site-overview-wrap sidebar-panel"><div class="site-overview"><div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person"><img class="site-author-image" itemprop="image" src="/images/aviator.jpg" alt="Hazelnuttt"><p class="site-author-name" itemprop="name">Hazelnuttt</p><p class="site-description motion-element" itemprop="description"></p></div><nav class="site-state motion-element"><div class="site-state-item site-state-posts"><a href="/archives/"><span class="site-state-item-count">10</span> <span class="site-state-item-name">日志</span></a></div><div class="site-state-item site-state-categories"><a href="/categories/index.html"><span class="site-state-item-count">1</span> <span class="site-state-item-name">分类</span></a></div><div class="site-state-item site-state-tags"><a href="/tags/index.html"><span class="site-state-item-count">7</span> <span class="site-state-item-name">标签</span></a></div></nav><div class="links-of-author motion-element"><span class="links-of-author-item"><a href="https://github.com/Hazelnuttt/Hazelnuttt.github.io" title="GitHub &rarr; https://github.com/Hazelnuttt/Hazelnuttt.github.io" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a> </span><span class="links-of-author-item"><a href="https://weibo.com/u/6318570647" title="Weibo &rarr; https://weibo.com/u/6318570647" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a></span></div></div></section><section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active"><div class="post-toc"><div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#视觉"><span class="nav-number">1.0.1.</span> <span class="nav-text">视觉</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#前后端交互"><span class="nav-number">1.0.2.</span> <span class="nav-text">前后端交互</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#域名、服务器"><span class="nav-number">1.0.3.</span> <span class="nav-text">域名、服务器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#nodejs-搭建服务器-express框架"><span class="nav-number">1.0.4.</span> <span class="nav-text">nodejs 搭建服务器 + express框架</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#网页碰到的问题-解决方法"><span class="nav-number">2.</span> <span class="nav-text">网页碰到的问题 + 解决方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#导航栏"><span class="nav-number">2.0.1.</span> <span class="nav-text">导航栏</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#页面内容"><span class="nav-number">2.0.2.</span> <span class="nav-text">页面内容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#移动端适配"><span class="nav-number">2.0.3.</span> <span class="nav-text">移动端适配</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#页面找错"><span class="nav-number">2.0.4.</span> <span class="nav-text">页面找错</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#性能优化"><span class="nav-number">2.0.5.</span> <span class="nav-text">性能优化</span></a></li></ol></li></div></div></section></div></aside></div></main><footer id="footer" class="footer"><div class="footer-inner"><div class="copyright">&copy; <span itemprop="copyrightYear">2019</span> <span class="with-love" id="animate"><i class="fa fa-user"></i> </span><span class="author" itemprop="copyrightHolder">Hazelnuttt</span></div><div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.7.1</div><span class="post-meta-divider">|</span><div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v6.5.0</div></div></footer><div class="back-to-top"><i class="fa fa-arrow-up"></i></div></div><script>"[object Function]"!==Object.prototype.toString.call(window.Promise)&&(window.Promise=null)</script><script src="/lib/jquery/index.js?v=2.1.3"></script><script src="/lib/velocity/velocity.min.js?v=1.2.1"></script><script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script><script src="/js/src/utils.js?v=6.5.0"></script><script src="/js/src/motion.js?v=6.5.0"></script><script src="/js/src/affix.js?v=6.5.0"></script><script src="/js/src/schemes/pisces.js?v=6.5.0"></script><script src="/js/src/scrollspy.js?v=6.5.0"></script><script src="/js/src/post-details.js?v=6.5.0"></script><script src="/js/src/bootstrap.js?v=6.5.0"></script><script>// Popup Window;
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.5.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.5.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.ico?v=6.5.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.ico?v=6.5.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.5.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.5.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="前言首先它是一个网站，不是一个网页。我仔细思考过网站这个东西，而且尽量往它身上靠，但我觉得我欠缺的东西很多很多，让我不知道怎么去实现某一些细节，一些让用户体验感很好的细节，让用户觉得这个网站不是很死的细节。我先来说一下我觉得好的网站是怎样的。 视觉 简   一个网站它是用来干嘛的，就要充分服务好这个主题，给用户提供最直接、最快的服务     动   一个网站往下翻东西的时候，你能感受到它是等你快翻">
+<meta name="keywords" content="website">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Website">
+<meta property="og:url" content="http://yoursite.com/2019/02/21/website/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="前言首先它是一个网站，不是一个网页。我仔细思考过网站这个东西，而且尽量往它身上靠，但我觉得我欠缺的东西很多很多，让我不知道怎么去实现某一些细节，一些让用户体验感很好的细节，让用户觉得这个网站不是很死的细节。我先来说一下我觉得好的网站是怎样的。 视觉 简   一个网站它是用来干嘛的，就要充分服务好这个主题，给用户提供最直接、最快的服务     动   一个网站往下翻东西的时候，你能感受到它是等你快翻">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-05-22T11:21:18.802Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Website">
+<meta name="twitter:description" content="前言首先它是一个网站，不是一个网页。我仔细思考过网站这个东西，而且尽量往它身上靠，但我觉得我欠缺的东西很多很多，让我不知道怎么去实现某一些细节，一些让用户体验感很好的细节，让用户觉得这个网站不是很死的细节。我先来说一下我觉得好的网站是怎样的。 视觉 简   一个网站它是用来干嘛的，就要充分服务好这个主题，给用户提供最直接、最快的服务     动   一个网站往下翻东西的时候，你能感受到它是等你快翻">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/02/21/website/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Website | Hexo</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Hazelnuttt's personal blog</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/21/website/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hazelnuttt">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/aviator.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Website
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-02-21 21:59:39" itemprop="dateCreated datePublished" datetime="2019-02-21T21:59:39+08:00">2019-02-21</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-22 19:21:18" itemprop="dateModified" datetime="2019-05-22T19:21:18+08:00">2019-05-22</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>首先它是一个网站，不是一个网页。我仔细思考过网站这个东西，而且尽量往它身上靠，但我觉得我欠缺的东西很多很多，让我不知道怎么去实现某一些细节，一些让用户体验感很好的细节，让用户觉得这个网站不是很死的细节。我先来说一下我觉得好的网站是怎样的。</p>
+<h4 id="视觉"><a href="#视觉" class="headerlink" title="视觉"></a>视觉</h4><ul>
+<li>简<blockquote>
+<blockquote>
+<blockquote>
+<p>一个网站它是用来干嘛的，就要充分服务好这个主题，给用户提供最直接、最快的服务</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li>动<blockquote>
+<blockquote>
+<blockquote>
+<p>一个网站往下翻东西的时候，你能感受到它是等你快翻到那里的时候跳出来的；还有就是一些很小很小，不会妨碍主题的小动画，当鼠标悬停在某个小图标上时，它会细微地动一下。（ps：我不知道第一个算不算动画）</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li>布局（部分）<blockquote>
+<blockquote>
+<blockquote>
+<p>1、一个网站可以划分为几个部分，导航栏（顶部、侧边栏），一个小小的导航栏，别小瞧，我 just can’t。比如鼠标悬停，下拉框直接下来了，下拉之后再悬停又一个大内容扩展出来。还有点击某个导航栏的选项后有一个小尖尖，我我我，，，2、看过一些商业型的页面，他们需要宣传他们新的产品，那就需要一个宣传新产品的一部分内容；产品会有不同的类，通常把这些类先集中一下，然后链接到具体产品，但是分类有会有很多种，宣传页面的形式不能雷同；又或者 有一些活动宣传。。这样内容就有很多个部分，每个部分都会是一个<strong>电脑大小</strong>的页面，你要充分掌握好这个电脑大小的内容，给用户一个不会“<strong>断</strong>“的感觉，并且内容适中</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+<h4 id="前后端交互"><a href="#前后端交互" class="headerlink" title="前后端交互"></a>前后端交互</h4><p>怎么说呢，就我吧，感觉没有后端的东西，那个网页就是死的。虽说“一个静态页面的请求+返回一个静态页面”这也算是前后端交互，但是前后端交互把，我会把它放到一个很高的水平上，网页一下子就有生命了。比如注册，（手机、email、qq、微信、短信、扫描二维码登录），这些功能让我觉得自己无从下手，因为这些功能真的能体现这个网站的生命啊！还有验证、提交信息等、、、自己很菜。还有最近我去弄了一下 blog，稍微仔细地看了一下 next 这个主题，很厉害啊。。。人家的渲染，我差不多知道一些，模板提取啊，数据库的东西展示到页面啊，我不知道它用的什么语言，但就是 HTML 感觉要被后端的语言快覆盖掉了，当然 css、js 是不会怎么变的，但我肯定不是一个水平的。</p>
+<h4 id="域名、服务器"><a href="#域名、服务器" class="headerlink" title="域名、服务器"></a>域名、服务器</h4><p>前面都是一个 web 网站的程序，再来说说一个完整的网站。首先得有个域名，域名注册这边就不详述了，给个<a href="https://www.jianshu.com/p/cea41e5c9b2a" target="_blank" rel="noopener">图文教程</a>吧。接着是服务器（ps:这边我还没有手动自己弄过），注册个服务器，把程序导入，域名到服务器因为也没弄过也不大清楚</p>
+<h4 id="nodejs-搭建服务器-express-框架"><a href="#nodejs-搭建服务器-express-框架" class="headerlink" title="nodejs 搭建服务器 + express 框架"></a>nodejs 搭建服务器 + express 框架</h4><p>不得不说，我感觉好难啊，因为我会觉得看不懂啊，它虽然会跟你讲这一部分是干了件什么事，但是我得一句句看懂吧，教程没有做到这一点啊，让我觉得自己还是 js 不会写，js。js。js。唉这个寒假没有，，我要快点补了。express 里我用了个 ejs 的模板引擎，然后就有一点 MVC 的影子了。不过要做到表单提交这些功能，自己还要进化啊啊！</p>
+<h2 id="网页碰到的问题-解决方法"><a href="#网页碰到的问题-解决方法" class="headerlink" title="网页碰到的问题 + 解决方法"></a>网页碰到的问题 + 解决方法</h2><p>一个网页可以分为几个部分，几个功能</p>
+<h4 id="导航栏"><a href="#导航栏" class="headerlink" title="导航栏"></a>导航栏</h4><blockquote>
+<blockquote>
+<blockquote>
+<p><strong>问题</strong>：一开始学的时候，会觉得“我靠，一个导航栏，怎么有这么多 class”，一开始肯定也会不清楚这些 class 是干什么的：其实就是 bootstrap 帮你写好的 css（bootstrap 是一个 css 框架）这里可以利用好 IDE，ctrl+左鼠标键，查看该 css<br> &gt;&gt;&gt; <strong>解决方法</strong>：看模板，然后多看看，发现就是那几句话，然后我知道这是个导航栏固定的套路</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h4 id="页面内容"><a href="#页面内容" class="headerlink" title="页面内容"></a>页面内容</h4><p>前面我也说了，一个好的页面会有页面内容的划分，这怎么做到呢？笼统地说就是给一个内容下面加一个背景。</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p><strong>问题</strong>：再回到前面，我是不是说过这个页面的大小要差不多是你电脑大小，这样背景的高度是不是就要和你电脑高度差不多，但是你也要顾及到你的内容啊，总要把相关内容包括进来。<br> &gt;&gt;&gt; <strong>解决方法</strong>：1.固定高度 2.内容到哪，高度到哪</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h4 id="移动端适配"><a href="#移动端适配" class="headerlink" title="移动端适配"></a>移动端适配</h4><p>主角肯定是 bootstra 的栅格系统了</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p><strong>问题</strong>：肯定会走过以下坑：1.内容重叠 2.内容冒出去 3.有些东西在小屏幕不好弄，也没啥用<br> &gt;&gt;&gt; <strong>解决方法</strong>：1./2. 12 个算一下，或者直接一个个试 ；第二个问题还有一点坑，就是明明只有 12 个以内，怎么和导航栏一起冒出去了呢？这边是因为没有仔细看文档“row”，这个 row 也有点坑，不过有些页面可能看不出，就是这个 row 有个 padding，好像是不对称的，手机端会有一点点问题 3.隐藏，既然手机端用不到，那就隐藏起来</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h4 id="页面找错"><a href="#页面找错" class="headerlink" title="页面找错"></a>页面找错</h4><p><strong>Chrome 的 F12</strong>工具，移动端适配啊，找错啊，特别是在 padding 啊，margin 啊，栅格啊什么的，很有用</p>
+<h4 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h4><p>分为开发和建立两个阶段。开发的时候不用去压缩，需要同步更新，就是不用一直 f5。建立的时候去压缩。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/website/" rel="tag"># website</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/10/trample/" rel="next" title="System">
+                <i class="fa fa-chevron-left"></i> System
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/22/odds/" rel="prev" title="调侃">
+                调侃 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/aviator.jpg"
+                alt="Hazelnuttt" />
+            
+              <p class="site-author-name" itemprop="name">Hazelnuttt</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/Hazelnuttt/Hazelnuttt.github.io" title="GitHub &rarr; https://github.com/Hazelnuttt/Hazelnuttt.github.io" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://weibo.com/u/6318570647" title="Weibo &rarr; https://weibo.com/u/6318570647" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#视觉"><span class="nav-number">1.0.1.</span> <span class="nav-text">视觉</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#前后端交互"><span class="nav-number">1.0.2.</span> <span class="nav-text">前后端交互</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#域名、服务器"><span class="nav-number">1.0.3.</span> <span class="nav-text">域名、服务器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#nodejs-搭建服务器-express-框架"><span class="nav-number">1.0.4.</span> <span class="nav-text">nodejs 搭建服务器 + express 框架</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网页碰到的问题-解决方法"><span class="nav-number">2.</span> <span class="nav-text">网页碰到的问题 + 解决方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#导航栏"><span class="nav-number">2.0.1.</span> <span class="nav-text">导航栏</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#页面内容"><span class="nav-number">2.0.2.</span> <span class="nav-text">页面内容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#移动端适配"><span class="nav-number">2.0.3.</span> <span class="nav-text">移动端适配</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#页面找错"><span class="nav-number">2.0.4.</span> <span class="nav-text">页面找错</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#性能优化"><span class="nav-number">2.0.5.</span> <span class="nav-text">性能优化</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hazelnuttt</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v6.5.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.5.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.5.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
     var isfetched = false;
     var isXml = true;
     // Search DB path;
@@ -314,4 +1273,37 @@
       if (shouldDismissSearchPopup) {
         onPopupClose();
       }
-    });</script></body></html>
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
