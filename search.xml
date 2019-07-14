@@ -1,28 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[login]]></title>
-    <url>%2F2019%2F07%2F15%2Flogin%2F</url>
-    <content type="text"><![CDATA[多思考，少做简单的体力活CSS 布局1234567891011121314.login-card &#123; min-height: 100vh; width: 100%; display: flex; /* 长宽都占满 flex布局 */ /* align-items: center; //上下 */ /* justify-conrent: center; //左右 */ /* 垂直居中 */ background-image: url(../../img/bg.JPG); background-size: 100% 100%; /* 宽、高 */ background-repeat: no-repeat; /* 不重叠 */&#125; axios fetch 要自己设置header:Content-Type:application/json axios 默认json 永远的迷/坑（无奈）12345axios .post(LOGIN_URL, values) // .then(res =&gt; res.json()) .then(response =&gt; &#123; ... axios 的res的body自己套了一个 data？ let res = response.data 细节成就你123if (response.status == 200) &#123; if (res.code == 0) &#123; ... 加上status和code]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>React</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[父子通信]]></title>
-    <url>%2F2019%2F07%2F15%2Fparent-child%2F</url>
-    <content type="text"><![CDATA[前言记忆力你怎么这么秀？复习复习复习 @Hazelnut ## class&amp;functionclass 里必须是this.props.namefunction component 里是props.name 父组件向子组件传参，子组件拿到父组件的 state,子组件里 props 渲染出来 这时候父组件里 123constructor(props)&#123;super(props)&#125; 可有可无，都没什么关系。 子组件传参数给父组件——标题看似是子传父，其实是父传子。子组件要想把改变的参数传给父组件，其实是“状态提升”，在父组件里写 state,子组件里拿 props, 其实就等同于父传子。唯一特别的就是，往往把“本来在子组件改变状态的方法”移到父组件去，这样父组件，子组件都能通过这个方法拿到 state。]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>React</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[music is soft]]></title>
     <url>%2F2019%2F07%2F15%2Fodds1%2F</url>
     <content type="text"><![CDATA[hi,前端要不要记代码？我想我们需要多思考，不要做简单的体力劳动今天再写 login 时，考虑要不要写个验证码，插件？纯写？让后端写？后来我找不到好的 blog,也找不到插件，于是放弃了。我常常想，我现在的放弃，是不是将来找工作的将就或是无奈。 U LAUGH LIKE A GOOD WEATHER MY LIFE IS BRILLIANT]]></content>
@@ -34,9 +12,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[react_Table]]></title>
-    <url>%2F2019%2F05%2F22%2Ftable%2F</url>
-    <content type="text"><![CDATA[Table功能增删改查 用record指明某条数据它主要是针对一条数据进行操作 我刚刚发现我一开始的写法不知道在干嘛。。 如何使 react 的索引 key –&gt; 指向数据库的 id123456789//在requireList()里this.setState(&#123; list: res.list.map((item, index) =&gt; &#123; item.key = item.index return item &#125;)&#125;)//这个index是索引的意思，但是对我传数据一点没用。今天看到说，key是方便react修改虚拟dom的，可以提高性能//这个item 就是一条条数据 12345678//在requireList()里this.setState(&#123; list: res.list.map(item =&gt; &#123; item.key = item.id return item &#125;)&#125;)//这个item 就是一条条数据 之后貌似不用一直依赖于这个 record 了==&gt;item.key就可以对数据操作了 用selectedRows和selectedKeys指明多条数据它主要针对多条数据的操作，会涉及到 radio/checkbox 的样式，如果不是批量编辑，就需要限制 checkbox 打钩的个数 必须知道的东西key&amp;selectedRowkeys&amp;rowKey&amp;selectedRows key和rowKey是一个东西selectedRowkeys是选中的这条数据的 key 值selectedRows是选中的这条数据的所有字段的值（就是这条数据）选择数据的有单选框和多选框两种123456789101112onSelectChange = (selectedRowkeys, selectedRows) =&gt; &#123; this.setState(&#123; selectedRowkeys, selectedItem: selectedRows[0] //注意：这里本人走了很长时间的坑，按照我的理解是：selectedRows 会有好多条数据，只能是第一条，数据才能被后续代入 &#125;)&#125;const rowSelection = &#123; type: 'radio', //单选框，可选择多选框 selectedRowKeys, onChange: this.onSelectChange&#125;&lt;Table rowSelection=&#123;rowSelection&#125; xxx /&gt; 点睛之笔1234567891011121314151617handleOperator = type =&gt; &#123; const &#123; selectedItem, selectedRowKeys &#125; = this.state let item = this.state.selectedItem console.log(selectedItem) console.log(selectedRowKeys) ···· ···· ···· else if (type == 'edit' || type == 'detail') &#123; this.setState(&#123; title: type == 'edit' ? '编辑用户' : '查看详情', isVisible: true, terinfo: item, type &#125;) 翻页这里主要是一个分页，向后端获取第 2..3..的数据注意点：这个 onChange 方法可以向 requirelist 一样变成一个通用的获取资源的方法，主要用在 edit/delete，因为删除或编辑的时候，需要仍然停留在该页，获取该页的数据 12345678910111213141516onChange = pageNumber =&gt; &#123; this.setState(&#123; pageNumber, loading: true &#125;) fetch(`http://198.13.50.147:8099/api/endpoint?page=$&#123;pageNumber&#125;`, &#123; ····· &#125; ·····&lt;Pagination className="pagination" defaultCurrent=&#123;1&#125; total=&#123;this.state.total&#125; onChange=&#123;this.onChange&#125;/&gt;]]></content>
+    <title><![CDATA[父子通信]]></title>
+    <url>%2F2019%2F07%2F15%2Fparent-child%2F</url>
+    <content type="text"><![CDATA[前言记忆力你怎么这么秀？复习复习复习 @Hazelnut ## class&amp;functionclass 里必须是this.props.namefunction component 里是props.name 父组件向子组件传参，子组件拿到父组件的 state,子组件里 props 渲染出来 这时候父组件里 123constructor(props)&#123;super(props)&#125; 可有可无，都没什么关系。 子组件传参数给父组件——标题看似是子传父，其实是父传子。子组件要想把改变的参数传给父组件，其实是“状态提升”，在父组件里写 state,子组件里拿 props, 其实就等同于父传子。唯一特别的就是，往往把“本来在子组件改变状态的方法”移到父组件去，这样父组件，子组件都能通过这个方法拿到 state。]]></content>
       <categories>
         <category>笔记</category>
       </categories>
@@ -45,9 +23,20 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[react_fetch]]></title>
-    <url>%2F2019%2F05%2F22%2Ffetch%2F</url>
-    <content type="text"><![CDATA[fetch 获取该页面的数据—&gt;requireList 如何写fetch 12345678910111213141516171819202122232425262728this.setState(&#123; loading: true &#125;)fetch('http://localhost:8099', &#123; method: 'GOT', headers: &#123; 'Content-Type': 'application/json' &#125;, body: JOSN.Stringfy(&#123; ...data &#125;)&#125;) .then(res =&gt; json()) .then(res =&gt; &#123; const &#123; msg &#125; = res if (msg === 'success') &#123; console.log(msg) message.success('登录成功！') &#125; else &#123; console.log(msg) message.error('登录失败！') &#125; &#125;) .catch(err =&gt; &#123; console.log(err) message.error('网络请求异常！') &#125;) .finally(() =&gt; &#123; this.setState(&#123; loading: fales &#125;) &#125;) 教你解决一个坑 后端是不是把一些少量的信息放在 headers 里传了？-哟 你是不是获取不到？-哟 你是不是还打印过 res,空的，这么拿得到 header 呢？-哟哟哟哈哈哈哈，恭喜你，踩到狗屎运了，俺来教你那啥，可能是跨域问题，打印的 res 会显示cros 12345678.......then(res=&gt;json()).then(res=&gt;&#123; const token = res.headers.get('token') console.log(token) //那啥，我警告你不要去打印res,之后你啥也拿不到，可能是后端的安全的问题。。&#125;)]]></content>
+    <title><![CDATA[login]]></title>
+    <url>%2F2019%2F07%2F15%2Flogin%2F</url>
+    <content type="text"><![CDATA[多思考，少做简单的体力活CSS 布局1234567891011121314.login-card &#123; min-height: 100vh; width: 100%; display: flex; /* 长宽都占满 flex布局 */ /* align-items: center; //上下 */ /* justify-conrent: center; //左右 */ /* 垂直居中 */ background-image: url(../../img/bg.JPG); background-size: 100% 100%; /* 宽、高 */ background-repeat: no-repeat; /* 不重叠 */&#125; axios fetch 要自己设置header:Content-Type:application/json axios 默认json 永远的迷/坑（无奈）12345axios .post(LOGIN_URL, values) // .then(res =&gt; res.json()) .then(response =&gt; &#123; ... axios 的res的body自己套了一个 data？ let res = response.data 细节成就你123if (response.status == 200) &#123; if (res.code == 0) &#123; ... 加上status和code]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>react</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[react_Table]]></title>
+    <url>%2F2019%2F05%2F22%2Ftable%2F</url>
+    <content type="text"><![CDATA[Table功能增删改查 用record指明某条数据它主要是针对一条数据进行操作 我刚刚发现我一开始的写法不知道在干嘛。。 如何使 react 的索引 key –&gt; 指向数据库的 id123456789//在requireList()里this.setState(&#123; list: res.list.map((item, index) =&gt; &#123; item.key = item.index return item &#125;)&#125;)//这个index是索引的意思，但是对我传数据一点没用。今天看到说，key是方便react修改虚拟dom的，可以提高性能//这个item 就是一条条数据 12345678//在requireList()里this.setState(&#123; list: res.list.map(item =&gt; &#123; item.key = item.id return item &#125;)&#125;)//这个item 就是一条条数据 之后貌似不用一直依赖于这个 record 了==&gt;item.key就可以对数据操作了 用selectedRows和selectedKeys指明多条数据它主要针对多条数据的操作，会涉及到 radio/checkbox 的样式，如果不是批量编辑，就需要限制 checkbox 打钩的个数 必须知道的东西key&amp;selectedRowkeys&amp;rowKey&amp;selectedRows key和rowKey是一个东西selectedRowkeys是选中的这条数据的 key 值selectedRows是选中的这条数据的所有字段的值（就是这条数据）选择数据的有单选框和多选框两种123456789101112onSelectChange = (selectedRowkeys, selectedRows) =&gt; &#123; this.setState(&#123; selectedRowkeys, selectedItem: selectedRows[0] //注意：这里本人走了很长时间的坑，按照我的理解是：selectedRows 会有好多条数据，只能是第一条，数据才能被后续代入 &#125;)&#125;const rowSelection = &#123; type: 'radio', //单选框，可选择多选框 selectedRowKeys, onChange: this.onSelectChange&#125;&lt;Table rowSelection=&#123;rowSelection&#125; xxx /&gt; 点睛之笔1234567891011121314151617handleOperator = type =&gt; &#123; const &#123; selectedItem, selectedRowKeys &#125; = this.state let item = this.state.selectedItem console.log(selectedItem) console.log(selectedRowKeys) ···· ···· ···· else if (type == 'edit' || type == 'detail') &#123; this.setState(&#123; title: type == 'edit' ? '编辑用户' : '查看详情', isVisible: true, terinfo: item, type &#125;) 翻页这里主要是一个分页，向后端获取第 2..3..的数据注意点：这个 onChange 方法可以向 requirelist 一样变成一个通用的获取资源的方法，主要用在 edit/delete，因为删除或编辑的时候，需要仍然停留在该页，获取该页的数据 12345678910111213141516onChange = pageNumber =&gt; &#123; this.setState(&#123; pageNumber, loading: true &#125;) fetch(`http://198.13.50.147:8099/api/endpoint?page=$&#123;pageNumber&#125;`, &#123; ····· &#125; ·····&lt;Pagination className="pagination" defaultCurrent=&#123;1&#125; total=&#123;this.state.total&#125; onChange=&#123;this.onChange&#125;/&gt;]]></content>
       <categories>
         <category>笔记</category>
       </categories>
@@ -86,6 +75,17 @@
       </categories>
       <tags>
         <tag>杂记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[react_fetch]]></title>
+    <url>%2F2019%2F05%2F22%2Ffetch%2F</url>
+    <content type="text"><![CDATA[fetch 获取该页面的数据—&gt;requireList 如何写fetch 12345678910111213141516171819202122232425262728this.setState(&#123; loading: true &#125;)fetch('http://localhost:8099', &#123; method: 'GOT', headers: &#123; 'Content-Type': 'application/json' &#125;, body: JOSN.Stringfy(&#123; ...data &#125;)&#125;) .then(res =&gt; json()) .then(res =&gt; &#123; const &#123; msg &#125; = res if (msg === 'success') &#123; console.log(msg) message.success('登录成功！') &#125; else &#123; console.log(msg) message.error('登录失败！') &#125; &#125;) .catch(err =&gt; &#123; console.log(err) message.error('网络请求异常！') &#125;) .finally(() =&gt; &#123; this.setState(&#123; loading: fales &#125;) &#125;) 教你解决一个坑 后端是不是把一些少量的信息放在 headers 里传了？-哟 你是不是获取不到？-哟 你是不是还打印过 res,空的，这么拿得到 header 呢？-哟哟哟哈哈哈哈，恭喜你，踩到狗屎运了，俺来教你那啥，可能是跨域问题，打印的 res 会显示cros 12345678.......then(res=&gt;json()).then(res=&gt;&#123; const token = res.headers.get('token') console.log(token) //那啥，我警告你不要去打印res,之后你啥也拿不到，可能是后端的安全的问题。。&#125;)]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>react</tag>
       </tags>
   </entry>
   <entry>
