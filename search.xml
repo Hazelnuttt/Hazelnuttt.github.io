@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[music is soft]]></title>
-    <url>%2F2019%2F07%2F15%2Fodds1%2F</url>
-    <content type="text"><![CDATA[hi,前端要不要记代码？我想我们需要多思考，不要做简单的体力劳动今天再写 login 时，考虑要不要写个验证码，插件？纯写？让后端写？后来我找不到好的 blog,也找不到插件，于是放弃了。我常常想，我现在的放弃，是不是将来找工作的将就或是无奈。 U LAUGH LIKE A GOOD WEATHER MY LIFE IS BRILLIANT]]></content>
+    <title><![CDATA[packageTable(二)]]></title>
+    <url>%2F2019%2F07%2F22%2FpackageTable1%2F</url>
+    <content type="text"><![CDATA[封装Table（二）前言上次讲到在 antd 的基础上，封装Table的 radio 和 checkbox，今天就讲用 Modal 实现增删改查。 Modal 里的 Form1234567891011121314151617181920212223242526272829&lt;Modal title=&#123;this.state.title&#125; //获得该状态的title visible=&#123;this.state.isVisible&#125; //获得是否显示 onOk=&#123;() =&gt; &#123; this.handleSubmit() //提交信息 // 重点！！！ this.RouteForm.props.form.resetFields() //antd 的this.props.form.resetFields this.setState(&#123; isVisible: false, routeinfo: '' &#125;) &#125;&#125; //里面是一个方法 onCancel=&#123;() =&gt; &#123; this.RouteForm.props.form.resetFields() this.setState(&#123; isVisible: false, routeinfo: '' &#125;) &#125;&#125; width=&#123;600&#125; &#123;...footer&#125; // 为什么要...&gt; &lt;RouteForm routeinfo=&#123;this.state.routeinfo&#125; type=&#123;this.state.type&#125; // 重点！！！ wrappedComponentRef=&#123;inst =&gt; (this.RouteForm = inst)&#125; /&gt;&lt;/Modal&gt; handleSubmit &amp;&amp; handleOprate &amp;&amp; 只能选一个 传入 type 1234&lt;Button type="add" onClick=&#123;() =&gt; this.handleOperate('add')&#125;&gt; 增加&lt;/Button&gt;// 其余类似 handleOprate,拿到 item=&gt;该渲染的数据,拿到 selectedRowKeys=&gt;该提交的 id,让弹框出现 123456789101112131415161718192021222324252627282930313233343536373839404142434445handleOperate = type =&gt; &#123; let &#123; selectedRowKeys &#125; = this.state let item = this.state.selectedItem //这样就有了选中的所有信息 if (type == 'delete') &#123; Modal.confirm(&#123; title: '确定要删除此用户吗？', onOk: () =&gt; &#123; axios .ajaxpost(&#123; url: '/routeinfo/delete', data: &#123; params: &#123; id: 3 &#125; &#125; &#125;) .then(res =&gt; &#123; const &#123; msg &#125; = res message.success('删除成功！') &#125;) &#125; &#125;) &#125; else if (type == 'update' || type == 'detail') &#123; // 重点！！！ if (this.state.selectedRowKeys.length &gt; 1) &#123; Modal.info(&#123; title: '提示', content: '请选择一个。。。' &#125;) &#125; else &#123; this.setState(&#123; title: type == 'edit' ? '编辑信息' : '查看详情', isVisible: true, routeinfo: item, selectedRowKeys, type &#125;) &#125; &#125; else if (type == 'add') &#123; this.setState(&#123; title: '创建路线', isVisible: true, routeinfo: '', type &#125;) &#125;&#125; 拿到弹框内的Form提交信息 123456789101112131415161718192021222324252627282930313233handleSubmit = () =&gt; &#123; let type = this.state.type // 重点！！！ let data = this.RouteForm.props.form.getFieldsValue() const &#123; selectedRowKeys &#125; = this.state console.log(data) if (type == 'add') &#123; axios .ajaxpost(&#123; url: '/routeinfo/add', data: &#123; data &#125; &#125;) .then(res =&gt; &#123; const &#123; msg &#125; = res console.log(data) console.log(msg) message.success('添加成功！') &#125;) &#125; else &#123; axios .ajaxpost(&#123; url: '/routeinfo/update', data: &#123; data, id: selectedRowKeys &#125; &#125;) .then(res =&gt; &#123; const &#123; msg &#125; = res console.log(data) console.log(msg) message.success('修改成功！') &#125;) &#125;&#125; 总结 wrappedComponentRef 12345 wrappedComponentRef=&#123;inst =&gt; (this.RouteForm = inst)&#125;......this.RouteForm.props.form.getFieldValue()this.RouteForm.props.form.resetFields() {( ) =&gt; this.handleOperate(&#39;add&#39;)} 我本来是this.RouteForm.props.form.handleSubmit(),想把 handleSubmit 放在 Form 里的，这样就可以把提交放在要提交的 Form 里了。Form在另外的文件。但是因为const selectedRowKeys = this.props.selectedRowKeys拿不到 selectedRowKeys。。。。。。=&gt;props 可能不能添加，再去看文档。。。。。。]]></content>
       <categories>
-        <category>杂记</category>
+        <category>笔记</category>
       </categories>
       <tags>
-        <tag>杂记</tag>
+        <tag>react</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[packageTable(一)]]></title>
+    <url>%2F2019%2F07%2F22%2FpackageTable%2F</url>
+    <content type="text"><![CDATA[封装Table(一)前言多多记笔记，勤劳 什么是封装，为什么要封装其实这都是我自己的理解，大家参考参考。首先，表单的增删改查非常重要，经常用到，但是代码其实我觉得挺乱的，不清晰。为什么要封装？=&gt;代码太长了，放在一个文件里面，逻辑都看不清。什么是封装=&gt;就比如这次的 Table 封装 123456789101112onSelectChange=(selectedRowKeys,selectedRows)=&gt;&#123; console.log(selectedRowKeys) console.log(selectedRows)&#125;// 把这个函数抽到其他文件去const rowSelection =&#123; const &#123;selectedRowKeys&#125; = this.state onChange: this.onSelectChange&#125;// 把这玩意抽到其他文件去，且能控制radio,还是checkbox,还有只能勾选一个还是多个（为后面增删改查做准备）&lt;Table rowSelection=&#123;rowSelection&#125; dataSource=&#123;this.state.list&#125; columns=&#123;columns&#125;/&gt; 即主要组件里就是有&lt;Table rowSelection={rowSelection} dataSource={this.state.list}columns={columns}/&gt;这一行代码了，贼清楚 一个完整的Table组件必须具备的东西 loading pageNum =&gt;（这里有一个问题，按需加载） isVisible(这就是一个弹框) =&gt; （有一个问题，不要用弹框添加，===&gt; 或者说详情和修改一起在新组件进行，添加也在新组建进行） 单选 Or 多选 checkbox Or radio 实现封装和checkbox Or radio123456789101112131415161718192021222324252627282930313233343536373839404142// 取个好听的名字Etableexport default class ETable extends React.Component &#123; state = &#123;&#125; // 选择框变更 onSelectChange = (selectedRowKeys, selectedRows) =&gt; &#123; console.log(selectedRowKeys) console.log(selectedRows) // 重点！！！ this.props.updateSelectedItem(selectedRowKeys, selectedRows) &#125; render() &#123; const &#123; selectedRowKeys &#125; = this.props // 思想！！！ const rowSelection = &#123; type: 'radio', selectedRowKeys, onChange: this.onSelectChange &#125; let row_selection = this.props.rowSelection // 当属性未false或者null时，说明没有单选或者复选列 if (row_selection === false || row_selection === null) &#123; row_selection = false &#125; else if (row_selection == 'checkbox') &#123; //设置类型未复选框 rowSelection.type = 'checkbox' &#125; else &#123; //默认未单选 row_selection = 'radio' &#125; return ( &lt;Table className="card-wrap page-table" bordered // 重点！！！ &#123;...this.props&#125; rowSelection=&#123;row_selection ? rowSelection : null&#125; /&gt; ) &#125;&#125; 12345678910111213return ( &lt;ETable // 重点！！！ updateSelectedItem=&#123;Utils.updateSelectedItem.bind(this)&#125; selectedRowKeys=&#123;selectedRowKeys&#125; selectedRows=&#123;selectedRows&#125; rowSelection=&#123;'checkbox'&#125; dataSource=&#123;this.state.list&#125; columns=&#123;columns&#125; bordered=&#123;true&#125; loading=&#123;this.state.loading&#125; /&gt;) 123456789101112// 调用组件外的函数// 函数可以在任何环境下运行，要弄清楚它的运行环境（即对象）==&gt; 知识点：thisexport default &#123; updateSelectedItem(selectedRowKeys, selectedRows) &#123; this.setState(&#123; selectedRowKeys, selectedItem: selectedRows &#125;) console.log(selectedRowKeys) console.log(selectedRows) &#125;&#125; 总结 父子组件通信 {...this.props} 这算继承吗？ 我再看看文档昂。 思想 this确实挺恶心的，烂代码 组件调用外部函数，改变该组件的状态（这些函数一般是因为通用，才把它抽到外面） nb 玩意1234onChange: this.onSelectChangeonSelectChange = (selectedRowKeys, selectedRows) =&gt; &#123; this.props.updateSelectedItem(selectedRowKeys, selectedRows)&#125; 过渡到 12345onSelectChange = (b, selectedRowKeys) =&gt; &#123; this.setState(&#123; selectedRowKeys, b &#125;) console.log(selectedRowKeys) console.log(b)&#125; 最后提醒自己：看文档很重要，加油！]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>react</tag>
       </tags>
   </entry>
   <entry>
@@ -34,9 +45,42 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[music is soft]]></title>
+    <url>%2F2019%2F07%2F15%2Fodds1%2F</url>
+    <content type="text"><![CDATA[hi,前端要不要记代码？我想我们需要多思考，不要做简单的体力劳动今天再写 login 时，考虑要不要写个验证码，插件？纯写？让后端写？后来我找不到好的 blog,也找不到插件，于是放弃了。我常常想，我现在的放弃，是不是将来找工作的将就或是无奈。 U LAUGH LIKE A GOOD WEATHER MY LIFE IS BRILLIANT]]></content>
+      <categories>
+        <category>杂记</category>
+      </categories>
+      <tags>
+        <tag>杂记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[react_install]]></title>
+    <url>%2F2019%2F05%2F22%2Finstall%26%26tools%2F</url>
+    <content type="text"><![CDATA[create-react-app前言React+antd的组件库 安装ps:可以使用npm,但是yarn更快、更安全 yarn create react-app myproject 初始化脚手架和 React 项目依赖 cd myproject yarn start 浏览器访问http://localhost:3000 12345678910111213141516171819202122232425#项目结构：├── package.json├── public| ├── favicon.ico| ├── index.html| └── manifest.json├── README.md├── src| ├── App.css| ├── App.js| ├── App.test.js| ├── index.css| ├── index.js| ├── logo.svg| └── serviceWorker.js└── yarn.lock#引入antdyarn add antd#修改`src/App/.css`,在文件顶部引入`antd/dist/antd.css`@import &apos;~antd/dist/antd.css&apos;; 文件说明 manifest.json对网页做一些配置：如果你打开过某个网页，它会自动有个桌面快捷键，用什么 LOGO，什么内容 serviceWorker.js配置好 manifest.json, 使用 registerServiceWorker.js，用户完全可以把你的网页快捷方式放到桌面上，因为你的网页此时支持离线访问，所以用起来和原生 app 的体验很接近。注意只有运行npm run build,这个文件才有用 sassnpm install node-sass 高级配置react-app-rewired 对create-react-app的默认配置进行重定义 yarn add react-app-rewired customize-cra --dev /* package.json */ &quot;scripts&quot;: { - &quot;start&quot;: &quot;react-scripts start&quot;, + &quot;start&quot;: &quot;react-app-rewired start&quot;, - &quot;build&quot;: &quot;react-scripts build&quot;, + &quot;build&quot;: &quot;react-app-rewired build&quot;, - &quot;test&quot;: &quot;react-scripts test&quot;, + &quot;test&quot;: &quot;react-app-rewired test&quot;, } 在项目的根目录创建一个config-overrides.js用于修改默认配置 babel-plugin-import babel-plugin-import 是一个用于按需加载组件代码和样式的 babel 插件 yarn add babel-plugin-import --dev /*config-overrides.js*/ + const { override, fixBabelImports } = require (&apos;customize-cra&apos;); + module.exports = override( + fixBabelImports(&apos;import&apos;, { + libraryName: &apos;antd&apos;, + libraryDirectory: &apos;es&apos;, + style: &apos;css&apos;, + }), + ); 然后移除前面在 src/App.css 里全量添加的 @import ‘~antd/dist/antd.css’;按下面格式引入模块 import { Button } from &apos;antd&apos;; 注意：package.json 里的内容要清楚，可以把配置或者工具链划分在devdependences中 工具链 .editorconfig prettier husky + lint-staged + commitlint Redux 初了解奉上链接：为啥会有 redux]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>react</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[react_Table]]></title>
     <url>%2F2019%2F05%2F22%2Ftable%2F</url>
     <content type="text"><![CDATA[Table功能增删改查 用record指明某条数据它主要是针对一条数据进行操作 我刚刚发现我一开始的写法不知道在干嘛。。 如何使 react 的索引 key –&gt; 指向数据库的 id123456789//在requireList()里this.setState(&#123; list: res.list.map((item, index) =&gt; &#123; item.key = item.index return item &#125;)&#125;)//这个index是索引的意思，但是对我传数据一点没用。今天看到说，key是方便react修改虚拟dom的，可以提高性能//这个item 就是一条条数据 12345678//在requireList()里this.setState(&#123; list: res.list.map(item =&gt; &#123; item.key = item.id return item &#125;)&#125;)//这个item 就是一条条数据 之后貌似不用一直依赖于这个 record 了==&gt;item.key就可以对数据操作了 用selectedRows和selectedKeys指明多条数据它主要针对多条数据的操作，会涉及到 radio/checkbox 的样式，如果不是批量编辑，就需要限制 checkbox 打钩的个数 必须知道的东西key&amp;selectedRowkeys&amp;rowKey&amp;selectedRows key和rowKey是一个东西selectedRowkeys是选中的这条数据的 key 值selectedRows是选中的这条数据的所有字段的值（就是这条数据）选择数据的有单选框和多选框两种123456789101112onSelectChange = (selectedRowkeys, selectedRows) =&gt; &#123; this.setState(&#123; selectedRowkeys, selectedItem: selectedRows[0] //注意：这里本人走了很长时间的坑，按照我的理解是：selectedRows 会有好多条数据，只能是第一条，数据才能被后续代入 &#125;)&#125;const rowSelection = &#123; type: 'radio', //单选框，可选择多选框 selectedRowKeys, onChange: this.onSelectChange&#125;&lt;Table rowSelection=&#123;rowSelection&#125; xxx /&gt; 点睛之笔1234567891011121314151617handleOperator = type =&gt; &#123; const &#123; selectedItem, selectedRowKeys &#125; = this.state let item = this.state.selectedItem console.log(selectedItem) console.log(selectedRowKeys) ···· ···· ···· else if (type == 'edit' || type == 'detail') &#123; this.setState(&#123; title: type == 'edit' ? '编辑用户' : '查看详情', isVisible: true, terinfo: item, type &#125;) 翻页这里主要是一个分页，向后端获取第 2..3..的数据注意点：这个 onChange 方法可以向 requirelist 一样变成一个通用的获取资源的方法，主要用在 edit/delete，因为删除或编辑的时候，需要仍然停留在该页，获取该页的数据 12345678910111213141516onChange = pageNumber =&gt; &#123; this.setState(&#123; pageNumber, loading: true &#125;) fetch(`http://198.13.50.147:8099/api/endpoint?page=$&#123;pageNumber&#125;`, &#123; ····· &#125; ·····&lt;Pagination className="pagination" defaultCurrent=&#123;1&#125; total=&#123;this.state.total&#125; onChange=&#123;this.onChange&#125;/&gt;]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>react</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[react_fetch]]></title>
+    <url>%2F2019%2F05%2F22%2Ffetch%2F</url>
+    <content type="text"><![CDATA[fetch 获取该页面的数据—&gt;requireList 如何写fetch 12345678910111213141516171819202122232425262728this.setState(&#123; loading: true &#125;)fetch('http://localhost:8099', &#123; method: 'GOT', headers: &#123; 'Content-Type': 'application/json' &#125;, body: JOSN.Stringfy(&#123; ...data &#125;)&#125;) .then(res =&gt; json()) .then(res =&gt; &#123; const &#123; msg &#125; = res if (msg === 'success') &#123; console.log(msg) message.success('登录成功！') &#125; else &#123; console.log(msg) message.error('登录失败！') &#125; &#125;) .catch(err =&gt; &#123; console.log(err) message.error('网络请求异常！') &#125;) .finally(() =&gt; &#123; this.setState(&#123; loading: fales &#125;) &#125;) 教你解决一个坑 后端是不是把一些少量的信息放在 headers 里传了？-哟 你是不是获取不到？-哟 你是不是还打印过 res,空的，这么拿得到 header 呢？-哟哟哟哈哈哈哈，恭喜你，踩到狗屎运了，俺来教你那啥，可能是跨域问题，打印的 res 会显示cros 12345678.......then(res=&gt;json()).then(res=&gt;&#123; const token = res.headers.get('token') console.log(token) //那啥，我警告你不要去打印res,之后你啥也拿不到，可能是后端的安全的问题。。&#125;)]]></content>
       <categories>
         <category>笔记</category>
       </categories>
@@ -56,17 +100,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[react_install]]></title>
-    <url>%2F2019%2F05%2F22%2Finstall%26%26tools%2F</url>
-    <content type="text"><![CDATA[create-react-app前言React+antd的组件库 安装ps:可以使用npm,但是yarn更快、更安全 yarn create react-app myproject 初始化脚手架和 React 项目依赖 cd myproject yarn start 浏览器访问http://localhost:3000 12345678910111213141516171819202122232425#项目结构：├── package.json├── public| ├── favicon.ico| ├── index.html| └── manifest.json├── README.md├── src| ├── App.css| ├── App.js| ├── App.test.js| ├── index.css| ├── index.js| ├── logo.svg| └── serviceWorker.js└── yarn.lock#引入antdyarn add antd#修改`src/App/.css`,在文件顶部引入`antd/dist/antd.css`@import &apos;~antd/dist/antd.css&apos;; 文件说明 manifest.json对网页做一些配置：如果你打开过某个网页，它会自动有个桌面快捷键，用什么 LOGO，什么内容 serviceWorker.js配置好 manifest.json, 使用 registerServiceWorker.js，用户完全可以把你的网页快捷方式放到桌面上，因为你的网页此时支持离线访问，所以用起来和原生 app 的体验很接近。注意只有运行npm run build,这个文件才有用 sassnpm install node-sass 高级配置react-app-rewired 对create-react-app的默认配置进行重定义 yarn add react-app-rewired customize-cra --dev /* package.json */ &quot;scripts&quot;: { - &quot;start&quot;: &quot;react-scripts start&quot;, + &quot;start&quot;: &quot;react-app-rewired start&quot;, - &quot;build&quot;: &quot;react-scripts build&quot;, + &quot;build&quot;: &quot;react-app-rewired build&quot;, - &quot;test&quot;: &quot;react-scripts test&quot;, + &quot;test&quot;: &quot;react-app-rewired test&quot;, } 在项目的根目录创建一个config-overrides.js用于修改默认配置 babel-plugin-import babel-plugin-import 是一个用于按需加载组件代码和样式的 babel 插件 yarn add babel-plugin-import --dev /*config-overrides.js*/ + const { override, fixBabelImports } = require (&apos;customize-cra&apos;); + module.exports = override( + fixBabelImports(&apos;import&apos;, { + libraryName: &apos;antd&apos;, + libraryDirectory: &apos;es&apos;, + style: &apos;css&apos;, + }), + ); 然后移除前面在 src/App.css 里全量添加的 @import ‘~antd/dist/antd.css’;按下面格式引入模块 import { Button } from &apos;antd&apos;; 注意：package.json 里的内容要清楚，可以把配置或者工具链划分在devdependences中 工具链 .editorconfig prettier husky + lint-staged + commitlint Redux 初了解奉上链接：为啥会有 redux]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>react</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[调侃]]></title>
     <url>%2F2019%2F05%2F22%2Fodds%2F</url>
     <content type="text"><![CDATA[闲事_01我的页面中也就一个表单提交，说我自己的页面中的是简单、垃圾，我貌似没有反驳，我也是这样想的，但是我貌似在这个增删改查上面花了好长时间。。。。。。但其实我感觉我并没有熟练掌握写这个东西。。。。。。所以我今天想写一篇关于表单的笔记。。。💩]]></content>
@@ -75,17 +108,6 @@
       </categories>
       <tags>
         <tag>杂记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[react_fetch]]></title>
-    <url>%2F2019%2F05%2F22%2Ffetch%2F</url>
-    <content type="text"><![CDATA[fetch 获取该页面的数据—&gt;requireList 如何写fetch 12345678910111213141516171819202122232425262728this.setState(&#123; loading: true &#125;)fetch('http://localhost:8099', &#123; method: 'GOT', headers: &#123; 'Content-Type': 'application/json' &#125;, body: JOSN.Stringfy(&#123; ...data &#125;)&#125;) .then(res =&gt; json()) .then(res =&gt; &#123; const &#123; msg &#125; = res if (msg === 'success') &#123; console.log(msg) message.success('登录成功！') &#125; else &#123; console.log(msg) message.error('登录失败！') &#125; &#125;) .catch(err =&gt; &#123; console.log(err) message.error('网络请求异常！') &#125;) .finally(() =&gt; &#123; this.setState(&#123; loading: fales &#125;) &#125;) 教你解决一个坑 后端是不是把一些少量的信息放在 headers 里传了？-哟 你是不是获取不到？-哟 你是不是还打印过 res,空的，这么拿得到 header 呢？-哟哟哟哈哈哈哈，恭喜你，踩到狗屎运了，俺来教你那啥，可能是跨域问题，打印的 res 会显示cros 12345678.......then(res=&gt;json()).then(res=&gt;&#123; const token = res.headers.get('token') console.log(token) //那啥，我警告你不要去打印res,之后你啥也拿不到，可能是后端的安全的问题。。&#125;)]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>react</tag>
       </tags>
   </entry>
   <entry>
